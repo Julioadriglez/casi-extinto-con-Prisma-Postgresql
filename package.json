@@ -18,5 +18,8 @@
   "homepage": "https://github.com/Julioadriglez/casi-extinto-con-Prisma-Postgresql#readme",
   "dependencies": {
     "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.18.0"
   }
 }
