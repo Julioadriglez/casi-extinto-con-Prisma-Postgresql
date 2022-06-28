@@ -1,0 +1,19 @@
+{
+  "name": "casi-extinto-con-prisma-postgresql",
+  "version": "1.0.0",
+  "description": "Legado del  proyecto casi extinto con Prisma y Postgresql",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Julioadriglez/casi-extinto-con-Prisma-Postgresql.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Julioadriglez/casi-extinto-con-Prisma-Postgresql/issues"
+  },
+  "homepage": "https://github.com/Julioadriglez/casi-extinto-con-Prisma-Postgresql#readme"
+}
