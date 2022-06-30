@@ -11,6 +11,17 @@ app.get('/', (req, res) => {
     res.json({message: 'alive'});
 });
 
+app.get('/animals', async (req, res) => {
+    const allAnimals = await prisma.animals.findMany({});
+    res.json(allAnimals)
+});
+
+app.get('/animals/:id', async (req, res) => {
+    const id = req.params.id;
+    const animal = await prisma.animals.findUnique({where: {id: parseInt(id)}});
+    res.json(animal);
+});
+
 app.listen(port, () => {
     console.log(`Listening to requests on port ${port}`);
 });
