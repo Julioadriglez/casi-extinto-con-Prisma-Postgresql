@@ -5,6 +5,7 @@ const port = process.env.port || 3000;
 
 //Requiere para usar Prisma
 const { PrismaClient } = require('@prisma/client');
+const { PrismaClientRustPanicError } = require('@prisma/client/runtime');
 const prisma = new PrismaClient();
 
 app.get('/', (req, res) => {
@@ -47,7 +48,14 @@ app.put('/animals/:id', async (req, res) => {
         }
     })
     return res.json({message: "Actualizado correctamente"});
-})
+});
+
+app.delete('/animals/:id', async (req, res) => {
+    const id = parseInt(req.params.id);
+
+    await prisma.animals.delete({where: {id: id}});
+    return res.json({ message: "Eliminado correctamente"});
+});
 
 app.listen(port, () => {
     console.log(`Listening to requests on port ${port}`);
