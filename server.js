@@ -33,6 +33,22 @@ app.post('/animals', async (req, res) => {
     return res.json({ message });
 });
 
+app.put('/animals/:id', async (req, res) => {
+    const id = parseInt(req.params.id);
+
+    await prisma.animals.update({
+        where: {
+            id: id
+        },
+        data: {
+            name: req.body.name,
+            imagen: req.body.imagen,
+            description: req.body.description
+        }
+    })
+    return res.json({message: "Actualizado correctamente"});
+})
+
 app.listen(port, () => {
     console.log(`Listening to requests on port ${port}`);
 });
